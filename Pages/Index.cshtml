@@ -1,0 +1,527 @@
+﻿@page
+@model IndexModel
+@{
+    ViewData["Title"] = "Home";
+}
+
+<!-- Hero Section -->
+<section id="home" class="hero">
+    <canvas id="particles-canvas"></canvas>
+    <div class="hero-content">
+        <h1 class="hero-title fade-in">
+            <span class="text-line">Hi, I'm</span>
+            <span class="text-line highlight-name">Malak Alsaeed</span>
+        </h1>
+        <h2 class="hero-subtitle fade-in-delay">
+            <span class="typing-text">Software Developer</span>
+        </h2>
+        <p class="hero-description fade-in-delay-2">
+            <span class="highlight-box">Full-stack software developer</span> focused on backend systems, APIs,
+            enterprise platforms, and workflow automation
+        </p>
+        <div class="hero-buttons fade-in-delay-3">
+            <a href="#projects" class="cta-button primary">
+                <span>View My Work</span>
+                <i class="fas fa-arrow-right"></i>
+            </a>
+            <a href="#contact" class="cta-button secondary">
+                <span>Get In Touch</span>
+                <i class="fas fa-paper-plane"></i>
+            </a>
+            <a href="#" class="cta-button tertiary" data-resume-link>
+                <span>Download Resume</span>
+                <i class="fas fa-download"></i>
+            </a>
+        </div>
+    </div>
+    <div class="scroll-indicator">
+        <div class="mouse">
+            <div class="wheel"></div>
+        </div>
+        <p>Scroll Down</p>
+    </div>
+</section>
+
+<!-- About Section -->
+<section id="about" class="about">
+    <div class="container">
+        <h2 class="section-title">
+            <span class="title-number">01.</span> About Me
+            <span class="title-decoration"></span>
+        </h2>
+        <div class="about-grid">
+            <div class="about-content">
+                <div class="about-intro">
+                    <p class="about-text highlight-text">
+                        <span class="emoji-icon">👋</span> I'm a <span class="text-highlight">Software Developer</span>
+                        with hands-on experience delivering full-stack web applications, mobile solutions, REST APIs,
+                        database-driven systems, enterprise platforms, and workflow automation.
+                    </p>
+                    <p class="about-text">
+                        I work across the full software lifecycle, from requirements analysis and development to testing,
+                        deployment, maintenance, and production support. My experience spans <span class="text-highlight">C#, .NET, ASP.NET Core, Django, React, TypeScript, SQL Server, PostgreSQL, PHP, Laravel, and Microsoft Entra ID</span>.
+                    </p>
+                    <p class="about-text">
+                        I enjoy building reliable systems that solve real business needs, including secure integrations,
+                        internal operational platforms, reporting tools, administrative portals, and mobile experiences.
+                    </p>
+                </div>
+
+                <div class="tech-stack">
+                    <h3 class="tech-stack-title">
+                        <i class="fas fa-code"></i> Technologies I Work With
+                    </h3>
+                    <div class="tech-grid">
+                        <div class="tech-item" data-tooltip="Language">
+                            <i class="fas fa-code"></i>
+                            <span>C#</span>
+                        </div>
+                        <div class="tech-item" data-tooltip="Language">
+                            <i class="fas fa-code"></i>
+                            <span>Python</span>
+                        </div>
+                        <div class="tech-item" data-tooltip="Language">
+                            <i class="fas fa-code"></i>
+                            <span>TypeScript</span>
+                        </div>
+                        <div class="tech-item" data-tooltip="Framework">
+                            <i class="fas fa-server"></i>
+                            <span>.NET 8/10</span>
+                        </div>
+                        <div class="tech-item" data-tooltip="Framework">
+                            <i class="fas fa-server"></i>
+                            <span>ASP.NET Core</span>
+                        </div>
+                        <div class="tech-item" data-tooltip="Framework">
+                            <i class="fas fa-laptop-code"></i>
+                            <span>React</span>
+                        </div>
+                        <div class="tech-item" data-tooltip="Framework">
+                            <i class="fas fa-laptop-code"></i>
+                            <span>Django</span>
+                        </div>
+                        <div class="tech-item" data-tooltip="Framework">
+                            <i class="fab fa-laravel"></i>
+                            <span>Laravel</span>
+                        </div>
+                        <div class="tech-item" data-tooltip="Database">
+                            <i class="fas fa-database"></i>
+                            <span>SQL Server</span>
+                        </div>
+                        <div class="tech-item" data-tooltip="Database">
+                            <i class="fas fa-database"></i>
+                            <span>PostgreSQL</span>
+                        </div>
+                        <div class="tech-item" data-tooltip="Mobile">
+                            <i class="fas fa-mobile-alt"></i>
+                            <span>.NET MAUI</span>
+                        </div>
+                        <div class="tech-item" data-tooltip="Security">
+                            <i class="fas fa-shield-alt"></i>
+                            <span>Entra ID</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="about-visual">
+                <div class="stats-container">
+                    <div class="stat-box">
+                        <div class="stat-icon">🚀</div>
+                        <div class="stat-number" data-target="12">12</div>
+                        <div class="stat-label">Projects</div>
+                    </div>
+                    <div class="stat-box">
+                        <div class="stat-icon">💻</div>
+                        <div class="stat-number" data-target="15">15</div>
+                        <div class="stat-label">Technologies</div>
+                    </div>
+                    <div class="stat-box">
+                        <div class="stat-icon">⚡</div>
+                        <div class="stat-number" data-target="100">100</div>
+                        <div class="stat-label">% Commitment</div>
+                    </div>
+                </div>
+
+                <div class="experience-timeline">
+                    <div class="timeline-item">
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-content">
+                            <h4>💼 Gulf Air</h4>
+                            <p>Software Developer via Computer World</p>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-content">
+                            <h4>🎓 AGU Trainee</h4>
+                            <p>PHP, Laravel, and PDF data processing</p>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-content">
+                            <h4>📊 Full-Stack Expertise</h4>
+                            <p>APIs, dashboards, systems integration, secure apps</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Projects Section -->
+<section id="projects" class="projects">
+    <div class="container">
+        <h2 class="section-title">
+            <span class="title-number">02.</span> Featured Projects
+            <span class="title-decoration"></span>
+        </h2>
+        <div class="projects-grid">
+
+            <div class="project-card">
+                <div class="project-icon">
+                    <i class="fas fa-warehouse"></i>
+                </div>
+                <h3 class="project-title">GarageFlow</h3>
+                <p class="project-description">Multi-tenant garage management SaaS covering customers, vehicles, appointments, job cards, inventory, suppliers, invoices, payments, and reporting.</p>
+                <ul class="project-features">
+                    <li>Multi-tenant architecture</li>
+                    <li>Operations and inventory workflows</li>
+                    <li>Invoices, payments, and expenses</li>
+                    <li>Reporting and analytics dashboards</li>
+                </ul>
+                <div class="project-tech">
+                    <span class="tech-tag">Python</span>
+                    <span class="tech-tag">Django</span>
+                    <span class="tech-tag">React</span>
+                    <span class="tech-tag">PostgreSQL</span>
+                </div>
+                <button class="project-expand-btn" onclick="toggleProjectDetails(this)">
+                    <i class="fas fa-chevron-down"></i> Learn More
+                </button>
+                <div class="project-details">
+                    <p>A comprehensive business platform designed for garage operations, combining backend services, automation, billing workflows, and a modern frontend interface for daily management.</p>
+                </div>
+            </div>
+
+            <div class="project-card">
+                <div class="project-icon">
+                    <i class="fas fa-station"></i>
+                </div>
+                <h3 class="project-title">Station Data Hub</h3>
+                <p class="project-description">Enterprise station-information platform with permissions, audit logging, reporting, documentation workflows, and administrative management tools.</p>
+                <ul class="project-features">
+                    <li>Role-based permissions</li>
+                    <li>Audit logging and reporting</li>
+                    <li>Documentation management</li>
+                    <li>Administrative dashboards</li>
+                </ul>
+                <div class="project-tech">
+                    <span class="tech-tag">React</span>
+                    <span class="tech-tag">TypeScript</span>
+                    <span class="tech-tag">ASP.NET Core</span>
+                    <span class="tech-tag">PostgreSQL</span>
+                </div>
+                <button class="project-expand-btn" onclick="toggleProjectDetails(this)">
+                    <i class="fas fa-chevron-down"></i> Learn More
+                </button>
+                <div class="project-details">
+                    <p>Built to streamline operational administration and station processes with a secure, structured, and data-centric interface for business users and administrators.</p>
+                </div>
+            </div>
+
+            <div class="project-card">
+                <div class="project-icon">
+                    <i class="fas fa-graduation-cap"></i>
+                </div>
+                <h3 class="project-title">GAA Simulator Training System</h3>
+                <p class="project-description">Training operations platform supporting simulator bookings, schedules, utilization, reporting, and analytics for business users.</p>
+                <ul class="project-features">
+                    <li>Simulator scheduling</li>
+                    <li>Utilization tracking</li>
+                    <li>Operational reporting</li>
+                    <li>Analytics dashboards</li>
+                </ul>
+                <div class="project-tech">
+                    <span class="tech-tag">ASP.NET Core</span>
+                    <span class="tech-tag">Razor Pages</span>
+                    <span class="tech-tag">SQL Server</span>
+                </div>
+                <button class="project-expand-btn" onclick="toggleProjectDetails(this)">
+                    <i class="fas fa-chevron-down"></i> Learn More
+                </button>
+                <div class="project-details">
+                    <p>A practical training management system for optimizing simulator resources and reducing scheduling complexity through automated reporting and planning workflows.</p>
+                </div>
+            </div>
+
+            <div class="project-card">
+                <div class="project-icon">
+                    <i class="fas fa-exclamation-triangle"></i>
+                </div>
+                <h3 class="project-title">CFMS</h3>
+                <p class="project-description">Crisis information and family-matching system supporting incident workflows, public forms, case review, matching, and reporting.</p>
+                <ul class="project-features">
+                    <li>Incident workflow support</li>
+                    <li>Case review and matching</li>
+                    <li>Public-facing forms</li>
+                    <li>Reporting and insights</li>
+                </ul>
+                <div class="project-tech">
+                    <span class="tech-tag">.NET</span>
+                    <span class="tech-tag">PostgreSQL</span>
+                    <span class="tech-tag">React</span>
+                    <span class="tech-tag">TypeScript</span>
+                </div>
+                <button class="project-expand-btn" onclick="toggleProjectDetails(this)">
+                    <i class="fas fa-chevron-down"></i> Learn More
+                </button>
+                <div class="project-details">
+                    <p>A mission-critical platform designed to support operational decision-making, family matching workflows, and structured incident handling during sensitive events.</p>
+                </div>
+            </div>
+
+            <div class="project-card">
+                <div class="project-icon">
+                    <i class="fas fa-comments"></i>
+                </div>
+                <h3 class="project-title">Call Center Chatbot</h3>
+                <p class="project-description">Digitally enabled call-center support solution improving service delivery and customer interaction workflows.</p>
+                <ul class="project-features">
+                    <li>Digital service support</li>
+                    <li>Workflow automation</li>
+                    <li>Customer interaction logic</li>
+                    <li>Operational efficiency</li>
+                </ul>
+                <div class="project-tech">
+                    <span class="tech-tag">AI</span>
+                    <span class="tech-tag">Workflow</span>
+                    <span class="tech-tag">Automation</span>
+                </div>
+                <button class="project-expand-btn" onclick="toggleProjectDetails(this)">
+                    <i class="fas fa-chevron-down"></i> Learn More
+                </button>
+                <div class="project-details">
+                    <p>Focused on streamlining call-center digital services and automating parts of the user journey through structured business logic and response automation.</p>
+                </div>
+            </div>
+
+            <div class="project-card">
+                <div class="project-icon">
+                    <i class="fas fa-chair"></i>
+                </div>
+                <h3 class="project-title">Seat Map Application</h3>
+                <p class="project-description">.NET MAUI tablet application for cabin crew to view aircraft seat maps and support onboard passenger and operational workflows.</p>
+                <ul class="project-features">
+                    <li>Interactive seat layouts</li>
+                    <li>Cabin crew usability</li>
+                    <li>Multiple aircraft configurations</li>
+                    <li>Operational support</li>
+                </ul>
+                <div class="project-tech">
+                    <span class="tech-tag">.NET MAUI</span>
+                    <span class="tech-tag">XAML</span>
+                    <span class="tech-tag">Tablet App</span>
+                </div>
+                <button class="project-expand-btn" onclick="toggleProjectDetails(this)">
+                    <i class="fas fa-chevron-down"></i> Learn More
+                </button>
+                <div class="project-details">
+                    <p>Designed for crew-facing operational use, helping with onboard workflows and visualizing seat arrangements clearly and efficiently on tablet devices.</p>
+                </div>
+            </div>
+
+            <div class="project-card">
+                <div class="project-icon">
+                    <i class="fas fa-code-branch"></i>
+                </div>
+                <h3 class="project-title">Genesys APIs</h3>
+                <p class="project-description">Secure REST API integrations for data exchange and system connectivity with Genesys-based operational workflows.</p>
+                <ul class="project-features">
+                    <li>REST APIs</li>
+                    <li>Secure data exchange</li>
+                    <li>System integration</li>
+                    <li>Business connectivity</li>
+                </ul>
+                <div class="project-tech">
+                    <span class="tech-tag">REST API</span>
+                    <span class="tech-tag">C#</span>
+                    <span class="tech-tag">Integration</span>
+                </div>
+                <button class="project-expand-btn" onclick="toggleProjectDetails(this)">
+                    <i class="fas fa-chevron-down"></i> Learn More
+                </button>
+                <div class="project-details">
+                    <p>Developed robust API interfaces to support secure, scalable integrations between systems and operational services used across digital platforms.</p>
+                </div>
+            </div>
+
+            <div class="project-card">
+                <div class="project-icon">
+                    <i class="fas fa-id-card"></i>
+                </div>
+                <h3 class="project-title">CMC Crew Card Generation</h3>
+                <p class="project-description">Operational crew card generation solution built to support standardized documentation and airline operations.</p>
+                <ul class="project-features">
+                    <li>Document generation</li>
+                    <li>Operational automation</li>
+                    <li>Structured outputs</li>
+                    <li>Business efficiency</li>
+                </ul>
+                <div class="project-tech">
+                    <span class="tech-tag">Automation</span>
+                    <span class="tech-tag">Data Processing</span>
+                    <span class="tech-tag">Operations</span>
+                </div>
+                <button class="project-expand-btn" onclick="toggleProjectDetails(this)">
+                    <i class="fas fa-chevron-down"></i> Learn More
+                </button>
+                <div class="project-details">
+                    <p>Created a practical operational tool that reduces manual effort in generating and managing crew documentation with more consistency and speed.</p>
+                </div>
+            </div>
+
+            <div class="project-card">
+                <div class="project-icon">
+                    <i class="fas fa-globe"></i>
+                </div>
+                <h3 class="project-title">Globify.bh</h3>
+                <p class="project-description">Full-stack website built with Laravel Livewire, Blade, Tailwind CSS, Flux UI, SQLite, and GitHub-based workflow practices.</p>
+                <ul class="project-features">
+                    <li>Laravel Livewire frontend</li>
+                    <li>Tailwind styling</li>
+                    <li>Simple deployment workflow</li>
+                    <li>Modern UI</li>
+                </ul>
+                <div class="project-tech">
+                    <span class="tech-tag">PHP</span>
+                    <span class="tech-tag">Laravel</span>
+                    <span class="tech-tag">Livewire</span>
+                    <span class="tech-tag">SQLite</span>
+                </div>
+                <button class="project-expand-btn" onclick="toggleProjectDetails(this)">
+                    <i class="fas fa-chevron-down"></i> Learn More
+                </button>
+                <div class="project-details">
+                    <p>A polished full-stack web project highlighting multilingual-ready design, practical component-driven development, and responsive layout implementation.</p>
+                </div>
+            </div>
+
+            <div class="project-card">
+                <div class="project-icon">
+                    <i class="fas fa-wallet"></i>
+                </div>
+                <h3 class="project-title">Finance Tracker</h3>
+                <p class="project-description">Personal finance web app for budgeting, expense tracking, and financial analytics.</p>
+                <ul class="project-features">
+                    <li>Expense monitoring</li>
+                    <li>Budget planning</li>
+                    <li>Financial analytics</li>
+                    <li>User-friendly dashboards</li>
+                </ul>
+                <div class="project-tech">
+                    <span class="tech-tag">Full-Stack</span>
+                    <span class="tech-tag">Dashboard</span>
+                    <span class="tech-tag">Analytics</span>
+                </div>
+                <button class="project-expand-btn" onclick="toggleProjectDetails(this)">
+                    <i class="fas fa-chevron-down"></i> Learn More
+                </button>
+                <div class="project-details">
+                    <p>Built to simplify household or personal financial management through intuitive data entry, clear reporting, and accessible budgeting insights.</p>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<!-- Skills Section -->
+<section id="skills" class="skills">
+    <div class="container">
+        <h2 class="section-title">
+            <span class="title-number">03.</span> Technical Skills
+            <span class="title-decoration"></span>
+        </h2>
+        <div class="skills-grid">
+            <div class="skill-category">
+                <h3 class="skill-category-title">Languages</h3>
+                <div class="skill-tags">
+                    <span class="skill-tag">C#</span>
+                    <span class="skill-tag">Python</span>
+                    <span class="skill-tag">TypeScript</span>
+                    <span class="skill-tag">JavaScript</span>
+                    <span class="skill-tag">Swift</span>
+                    <span class="skill-tag">PHP</span>
+                    <span class="skill-tag">SQL</span>
+                </div>
+            </div>
+            <div class="skill-category">
+                <h3 class="skill-category-title">Frameworks & Platforms</h3>
+                <div class="skill-tags">
+                    <span class="skill-tag">.NET 8/10</span>
+                    <span class="skill-tag">ASP.NET Core</span>
+                    <span class="skill-tag">.NET MAUI</span>
+                    <span class="skill-tag">Django</span>
+                    <span class="skill-tag">DRF</span>
+                    <span class="skill-tag">React</span>
+                    <span class="skill-tag">Laravel</span>
+                    <span class="skill-tag">Livewire</span>
+                </div>
+            </div>
+            <div class="skill-category">
+                <h3 class="skill-category-title">Data, APIs & Testing</h3>
+                <div class="skill-tags">
+                    <span class="skill-tag">REST APIs</span>
+                    <span class="skill-tag">Entity Framework</span>
+                    <span class="skill-tag">Celery</span>
+                    <span class="skill-tag">PostgreSQL</span>
+                    <span class="skill-tag">SQL Server</span>
+                    <span class="skill-tag">Oracle</span>
+                    <span class="skill-tag">Redis</span>
+                    <span class="skill-tag">Pytest</span>
+                    <span class="skill-tag">Pandas</span>
+                </div>
+            </div>
+            <div class="skill-category">
+                <h3 class="skill-category-title">Core Skills</h3>
+                <div class="skill-tags">
+                    <span class="skill-tag">Full-Stack Development</span>
+                    <span class="skill-tag">System Integration</span>
+                    <span class="skill-tag">Authentication & Authorization</span>
+                    <span class="skill-tag">Workflow Automation</span>
+                    <span class="skill-tag">Testing</span>
+                    <span class="skill-tag">Debugging</span>
+                    <span class="skill-tag">Production Support</span>
+                    <span class="skill-tag">PDF Data Extraction</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Contact Section -->
+<section id="contact" class="contact">
+    <div class="container">
+        <h2 class="section-title">
+            <span class="title-number">04.</span> Get In Touch
+            <span class="title-decoration"></span>
+        </h2>
+        <div class="contact-content">
+            <p class="contact-text">Open to discussing software engineering roles, enterprise systems, API work, and full-stack product development opportunities.</p>
+            <div class="contact-links">
+                <a href="mailto:alsaeedmalak8@gmail.com" class="contact-button">
+                    <i class="fas fa-envelope"></i> Email Me
+                </a>
+                <a href="https://www.linkedin.com/in/malak-alsaeed/" target="_blank" class="contact-button">
+                    <i class="fab fa-linkedin"></i> LinkedIn
+                </a>
+                <a href="#" class="contact-button" data-resume-link>
+                    <i class="fas fa-download"></i> Download Resume
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
