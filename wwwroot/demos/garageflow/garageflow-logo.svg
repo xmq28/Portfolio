@@ -1,0 +1,40 @@
+<svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="logoGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#facc15;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#f97316;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  
+  <!-- Background circle for visibility -->
+  <rect width="48" height="48" rx="8" fill="url(#logoGradient)" />
+  
+  <!-- Wrench and gear elements representing mechanics/garage -->
+  <!-- Wrench -->
+  <g transform="translate(10, 14)">
+    <!-- Wrench handle -->
+    <rect x="0" y="2" width="16" height="3" rx="1.5" fill="#111827" />
+    <!-- Wrench head -->
+    <circle cx="17" cy="3.5" r="2.5" fill="#111827" />
+  </g>
+  
+  <!-- Gear representing flow/mechanics -->
+  <g transform="translate(24, 16)">
+    <!-- Outer gear teeth -->
+    <circle cx="0" cy="0" r="8" fill="none" stroke="#111827" stroke-width="1.5" />
+    <!-- Gear teeth (simplified) -->
+    <g id="teeth" fill="#111827">
+      <rect x="-1" y="-9.5" width="2" height="2" />
+      <rect x="-1" y="7.5" width="2" height="2" />
+      <rect x="7.5" y="-1" width="2" height="2" />
+      <rect x="-9.5" y="-1" width="2" height="2" />
+    </g>
+    <!-- Inner circle -->
+    <circle cx="0" cy="0" r="3.5" fill="#111827" />
+  </g>
+  
+  <!-- Checkmark representing "flow" completion -->
+  <g transform="translate(28, 28)">
+    <path d="M 0 4 L 2.5 6.5 L 7 2" stroke="#111827" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round" />
+  </g>
+</svg>

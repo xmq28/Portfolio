@@ -1,0 +1,28 @@
+﻿<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <link rel="icon" type="image/svg+xml" href="template-logo.svg" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Offline Crew Member Certificate generation demo" />
+  <title>CMC Card Generation | Portfolio Demo</title>
+  <link rel="stylesheet" href="cmc-demo.css" />
+</head>
+<body>
+  <header class="app-header">
+    <div class="brand"><span class="brand-mark">CAA</span><span class="brand-divider"></span><div><strong>CMC Card Generation</strong><small>Crew Member Certificates</small></div></div>
+    <div class="demo-state"><span></span> Offline demo</div>
+  </header>
+  <nav class="app-nav" aria-label="Application navigation">
+    <a class="portfolio-back" href="/#projects">Back to portfolio</a>
+    <button class="nav-link active" data-view="dashboard">Dashboard</button>
+    <button class="nav-link" data-view="generate">Generate card</button>
+    <button class="nav-link" data-view="registry">Card register</button>
+    <button class="nav-link" data-view="reminders">Reminders</button>
+  </nav>
+  <main id="app" class="app-shell"></main>
+  <div id="toast" class="toast" role="status" aria-live="polite"></div>
+  <script src="cmc-demo.js"></script>
+</body>
+</html>
+

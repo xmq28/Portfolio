@@ -19,8 +19,25 @@ app.UseRouting();
 
 app.UseAuthorization();
 
+app.Use(async (context, next) =>
+{
+    if (context.Request.Path.StartsWithSegments("/demos/cmccrewcard"))
+    {
+        context.Response.Headers.CacheControl = "no-store, no-cache, must-revalidate, max-age=0";
+        context.Response.Headers.Pragma = "no-cache";
+    }
+
+    await next();
+});
+
+app.UseDefaultFiles();
+app.UseStaticFiles();
+
 app.MapStaticAssets();
 app.MapRazorPages()
    .WithStaticAssets();
+
+app.MapFallbackToFile("/demos/stationdatahub/{*path:nonfile}", "demos/stationdatahub/index.html");
+app.MapFallbackToFile("/demos/seatmap/{*path:nonfile}", "demos/seatmap/index.html");
 
 app.Run();

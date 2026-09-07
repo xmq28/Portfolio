@@ -1,0 +1,1 @@
+var e=[`CmcAdmin`,`CmcCaseWorker`,`CmcAuditorReporting`,`Dev`],t=new Set(e);function n(e){return t.has(e)}function r(e){return e.find(n)??null}function i(e,t){return e.includes(t)}function a(e,t){let n=new Set(e);return(Array.isArray(t)?t:[t]).some(e=>n.has(e))}export{e as a,n as i,a as n,i as r,r as t};

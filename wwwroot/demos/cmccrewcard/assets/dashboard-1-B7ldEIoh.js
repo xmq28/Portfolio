@@ -1,0 +1,1 @@
+import{t as e}from"./jsx-runtime-DUXOgzKQ.js";import{t}from"./compiler-runtime-BXQ7lWF9.js";import{t as n}from"./dashboard-placeholder-page-CyxSfgB4.js";var r=t(),i=e();function a(){let e=(0,r.c)(1),t;return e[0]===Symbol.for(`react.memo_cache_sentinel`)?(t=(0,i.jsx)(n,{title:`Dashboard 1`}),e[0]=t):t=e[0],t}var o=a;export{o as component};

@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="RIO flight operations follow-up demonstration">
+    <title>RIO | Flight Follow Up</title>
+    <link rel="stylesheet" href="css/site.css">
+</head>
+<body>
+    <div class="app-shell">
+        <aside class="sidebar">
+            <a class="brand" href="#dashboard" data-view="dashboard" aria-label="RIO dashboard">
+                <span class="brand-mark">R</span><span>RIO</span>
+            </a>
+            <p class="brand-caption">Operations intelligence</p>
+            <nav class="nav-list" aria-label="Main navigation">
+                <button class="nav-item active" data-view="dashboard"><span>Overview</span></button>
+                <button class="nav-item" data-view="delays"><span>Flight Delays</span><b id="delayCount">4</b></button>
+                <button class="nav-item" data-view="accepted"><span>Accepted Flights</span></button>
+                <button class="nav-item" data-view="followups"><span>Follow Ups</span></button>
+                <button class="nav-item" data-view="closed"><span>Closed Follow Ups</span></button>
+                <button class="nav-item" data-view="dis"><span>Departure Information</span></button>
+            </nav>
+            <a class="return-link" href="/#projects">Back to portfolio</a>
+        </aside>
+
+        <main class="main-content">
+            <header class="topbar">
+                <div><span class="eyebrow">RIO</span><h1 id="pageTitle">Operations overview</h1></div>
+                <div class="topbar-meta"><span class="live-dot"></span><span>Demo workspace</span><time id="today"></time></div>
+            </header>
+
+            <section class="view active" id="dashboardView">
+                <div class="metrics">
+                    <article class="metric"><span>Active Follow-Ups</span><strong id="activeMetric">12</strong><small>4 need attention today</small></article>
+                    <article class="metric"><span>Closed Follow-Ups</span><strong id="closedMetric">28</strong><small>Last 30 days</small></article>
+                    <article class="metric"><span>Total Operated Flights</span><strong>184</strong><small>Today</small></article>
+                    <article class="metric warning"><span>Delay Flights +15m</span><strong id="delayMetric">4</strong><small>2 assigned, 2 pending</small></article>
+                </div>
+                <div class="dashboard-grid">
+                    <article class="panel bars-panel"><div class="panel-heading"><div><span class="eyebrow">Current period</span><h2>Assigned delay codes</h2></div></div><div id="barChart" class="bar-chart"></div></article>
+                    <article class="panel performance-panel"><div class="panel-heading"><div><span class="eyebrow">September 2026</span><h2>Performance percentages</h2></div><span class="benchmark">Target 85%</span></div><div class="dials" id="dials"></div></article>
+                    <article class="panel departments"><div class="panel-heading"><h2>Assigned departments</h2><button class="text-button" data-view="followups">Open follow ups</button></div><div id="departmentList" class="department-list"></div></article>
+                    <article class="panel recent"><div class="panel-heading"><h2>Recently closed</h2><button class="text-button" data-view="closed">View all</button></div><div id="recentList" class="recent-list"></div></article>
+                </div>
+            </section>
+
+            <section class="view" id="tableView">
+                <article class="panel data-panel">
+                    <div class="panel-heading table-heading"><div><span class="eyebrow" id="tableEyebrow">Operational queue</span><h2 id="tableTitle">Flight Delays</h2></div><button class="secondary-button" id="calculatorButton" title="Open date calculator">Date calculator</button></div>
+                    <div class="filter-row"><label class="search"><span>Search</span><input id="searchInput" type="search" placeholder="Flight, registration, route, delay code"></label><label><span>Delay group</span><select id="groupFilter"><option value="">All groups</option><option>Airport</option><option>Operational</option><option>Technical</option></select></label><label><span>From</span><input id="fromDate" type="date"></label><label><span>To</span><input id="toDate" type="date"></label></div>
+                    <div class="table-wrap"><table><thead><tr><th data-sort="reg">REG</th><th data-sort="flight">Flight</th><th data-sort="date">Date</th><th>Route</th><th data-sort="std">STD</th><th>ATD</th><th>STA</th><th>ATA</th><th>Delay codes</th><th>Delay times</th><th>Actions</th></tr></thead><tbody id="flightRows"></tbody></table></div>
+                    <p class="empty-state" id="emptyState" hidden>No flights match the current filters.</p>
+                </article>
+            </section>
+
+            <section class="view" id="disView">
+                <div class="dis-header"><div><span class="eyebrow">Flight record</span><h2>Departure Information Sheet</h2></div><span class="history-pill">Loaded from history</span></div>
+                <div class="flight-summary"><div><span>Flight number</span><b>GF 104</b></div><div><span>Flight date</span><b>07 Sep 2026</b></div><div><span>Origin</span><b>DMM</b></div><div><span>Destination</span><b>BAH</b></div></div>
+                <div class="dis-tabs" role="tablist"><button class="dis-tab active" data-dis-tab="csm">CSM Check<small>Incomplete</small></button><button class="dis-tab" data-dis-tab="special">Special Assistance<small>Complete</small></button><button class="dis-tab" data-dis-tab="checklist">Check List<small>Complete</small></button><button class="dis-tab" data-dis-tab="load">Customer Load<small>Complete</small></button><button class="dis-tab" data-dis-tab="remarks">Remarks<small>Complete</small></button></div>
+                <article class="panel dis-content" id="disContent"></article>
+                <div class="dis-actions"><button class="secondary-button" data-view="dashboard">Back</button><button class="primary-button" id="submitSheet">Submit sheet</button></div>
+            </section>
+        </main>
+    </div>
+
+    <dialog id="flightDialog" class="dialog"><div class="dialog-header"><div><span class="eyebrow" id="dialogEyebrow">Follow up</span><h2 id="dialogTitle">Flight details</h2></div><button class="icon-button" id="closeDialog" aria-label="Close dialog">x</button></div><div id="dialogContent"></div></dialog>
+    <dialog id="calculatorDialog" class="dialog calculator"><div class="dialog-header"><div><span class="eyebrow">Utility</span><h2>Date calculator</h2></div><button class="icon-button" data-close-calculator aria-label="Close calculator">x</button></div><label>From<input type="date" id="calcFrom" value="2026-09-01"></label><label>To<input type="date" id="calcTo" value="2026-09-07"></label><button class="primary-button" id="calculate">Calculate difference</button><output id="calcResult">Choose two dates to calculate.</output></dialog>
+    <div id="toast" role="status" aria-live="polite"></div>
+    <script src="js/site.js"></script>
+</body>
+</html>

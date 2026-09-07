@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Interactive Seat Map Application demonstration.">
+    <title>Seat Map Application</title>
+    <link rel="stylesheet" href="seatmap.css">
+</head>
+<body>
+    <header class="app-header">
+        <a class="back-link" href="/#projects" aria-label="Back to portfolio">Back to portfolio</a>
+        <div class="brand">GULF AIR</div>
+        <button class="text-button" id="backButton" type="button" hidden>Back</button>
+    </header>
+
+    <main>
+        <section class="selection-screen" id="selectionScreen" aria-labelledby="selectTitle">
+            <div class="content-wrap">
+                <p class="eyebrow">Cabin operations</p>
+                <h1 id="selectTitle">Select Aircraft</h1>
+                <label class="field-label" for="aircraftPicker">Aircraft configuration</label>
+                <select id="aircraftPicker" class="aircraft-picker"></select>
+
+                <article class="details-card" id="detailsCard">
+                    <div class="aircraft-name"><span aria-hidden="true">&#9992;</span><h2 id="aircraftName"></h2></div>
+                    <div class="seat-counts">
+                        <div><span>Total Seats</span><strong id="totalSeats"></strong></div>
+                        <div><span>Business</span><strong id="businessSeats"></strong></div>
+                        <div><span>Economy</span><strong id="economySeats"></strong></div>
+                    </div>
+                    <dl class="aircraft-details">
+                        <div><dt>Role</dt><dd id="role"></dd></div>
+                        <div><dt>Crew</dt><dd id="crew"></dd></div>
+                        <div><dt>Engine</dt><dd id="engine"></dd></div>
+                        <div><dt>Range</dt><dd id="range"></dd></div>
+                    </dl>
+                    <button class="primary-button" id="viewMapButton" type="button">View Seat Map</button>
+                </article>
+            </div>
+        </section>
+
+        <section class="map-screen" id="mapScreen" aria-labelledby="mapTitle" hidden>
+            <div class="map-heading">
+                <div><p class="eyebrow">Aircraft configuration</p><h1 id="mapTitle"></h1><p id="mapSeatCount"></p></div>
+                <div class="selection-summary" id="selectionSummary" aria-live="polite">No seat selected</div>
+            </div>
+            <div class="map-layout">
+                <aside class="legend" aria-label="Seat legend">
+                    <h2>Seat Legend</h2>
+                    <span><i class="business"></i>Business</span>
+                    <span><i class="economy"></i>Economy</span>
+                    <span><i class="exit"></i>Exit Row</span>
+                    <span><i class="reserved"></i>Reserved</span>
+                    <span><i class="selected"></i>Selected</span>
+                </aside>
+                <div class="map-viewport"><div class="aircraft" id="seatMap" aria-label="Interactive aircraft seat map"></div></div>
+                <aside class="seat-panel" id="seatPanel" aria-live="polite">
+                    <p class="panel-caption">Seat details</p>
+                    <h2>Select a seat</h2>
+                    <p>Choose an available seat to see its cabin features and service notes.</p>
+                </aside>
+            </div>
+        </section>
+    </main>
+    <script src="seatmap.js"></script>
+</body>
+</html>

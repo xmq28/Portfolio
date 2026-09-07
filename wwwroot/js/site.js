@@ -189,7 +189,7 @@ function setupResumeLinks() {
 
     const openResume = async () => {
         if (!cachedBlobUrl) {
-            const response = await fetch('/resume/malak-alsaeed-resume.base64.txt?v=1', { cache: 'no-store' });
+            const response = await fetch('/resume/malak-alsaeed-resume.base64.txt?v=2', { cache: 'no-store' });
             if (!response.ok) {
                 throw new Error('Resume file is temporarily unavailable.');
             }

@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" role="img" aria-label="CrisisFamilyMatchingSystem logo">
+  <defs>
+    <linearGradient id="cisGradient" x1="16" y1="12" x2="112" y2="116" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#0b2a4a" />
+      <stop offset="1" stop-color="#163e72" />
+    </linearGradient>
+  </defs>
+  <rect x="8" y="8" width="112" height="112" rx="28" fill="url(#cisGradient)" />
+  <path d="M30 44h16v40H30zm0 48h16v8H30zm24-48h12l12 24 12-24h12l-18 34v14H72V78L54 44zm-6 48h14c14 0 22-8 22-20 0-10-6-16-16-18l-10-2c-4-1-6-3-6-6 0-4 4-7 10-7 6 0 11 2 15 5l7-10c-5-4-12-7-22-7-13 0-22 8-22 19 0 10 6 16 16 18l10 2c4 1 6 3 6 7 0 5-4 8-11 8-8 0-14-3-19-7l-9 10c6 6 15 10 25 10z" fill="#f7c948" />
+</svg>
