@@ -5,8 +5,94 @@
     <link rel="icon" href="/demos/stationdatahub/favicon.ico" sizes="any" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Station Data Hub</title>
-    <script type="module" crossorigin src="/demos/stationdatahub/assets/index-BOqs2mFH.js"></script>
+    <script>
+      document.addEventListener('click', function (event) {
+        var link = event.target.closest && event.target.closest('.portfolio-back-link');
+        if (!link) return;
+        event.preventDefault();
+        event.stopImmediatePropagation();
+        window.location.assign('/?project=stationdatahub&v=20260915-returns-4#stationdatahub');
+      }, true);
+
+      document.addEventListener('DOMContentLoaded', function () {
+        var updateLink = function () {
+          var link = document.querySelector('.portfolio-back-link');
+          if (!link) return;
+          link.setAttribute('href', '/?project=stationdatahub&v=20260915-returns-4#stationdatahub');
+          link.onclick = function () {
+            window.location.assign('/?project=stationdatahub&v=20260915-returns-4#stationdatahub');
+            return false;
+          };
+        };
+        updateLink();
+        window.setTimeout(updateLink, 500);
+        new MutationObserver(updateLink).observe(document.body, { childList: true, subtree: true });
+      });
+
+      try {
+        if (window.crypto && typeof window.crypto.randomUUID !== 'function') {
+          window.crypto.randomUUID = function () {
+            var bytes = new Uint8Array(16);
+            window.crypto.getRandomValues(bytes);
+            bytes[6] = (bytes[6] & 15) | 64;
+            bytes[8] = (bytes[8] & 63) | 128;
+            var hex = Array.prototype.map.call(bytes, function (byte) {
+              return byte.toString(16).padStart(2, '0');
+            }).join('');
+            return hex.slice(0, 8) + '-' + hex.slice(8, 12) + '-' + hex.slice(12, 16) + '-' + hex.slice(16, 20) + '-' + hex.slice(20);
+          };
+        }
+      } catch (compatibilityError) {
+        // Safari can expose crypto as a non-extensible object.
+      }
+
+      try {
+        if (typeof window.structuredClone !== 'function') {
+          window.structuredClone = function (value) {
+            return JSON.parse(JSON.stringify(value));
+          };
+        }
+      } catch (compatibilityError) {
+        // Keep startup alive when Safari protects global properties.
+      }
+
+      try {
+        if (typeof String.prototype.replaceAll !== 'function') {
+          String.prototype.replaceAll = function (search, replacement) {
+            return this.split(search).join(replacement);
+          };
+        }
+      } catch (compatibilityError) {
+        // Keep startup alive when Safari protects native prototypes.
+      }
+
+      try {
+        if (typeof Promise.allSettled !== 'function') {
+          Promise.allSettled = function (promises) {
+            return Promise.all(Array.prototype.map.call(promises, function (promise) {
+              return Promise.resolve(promise).then(function (value) {
+                return { status: 'fulfilled', value: value };
+              }, function (reason) {
+                return { status: 'rejected', reason: reason };
+              });
+            }));
+          };
+        }
+      } catch (compatibilityError) {
+        // Keep startup alive when Safari protects native prototypes.
+      }
+
+      window.addEventListener('error', function (event) {
+        var root = document.getElementById('root');
+        if (root && !root.hasChildNodes()) {
+          var detail = event && event.message ? '<small style="display:block;margin-top:1rem;opacity:.7">' + event.message + '</small>' : '';
+          root.innerHTML = '<main style="padding:2rem;font-family:system-ui;color:#ccd6f6;background:#0a192f;min-height:100vh"><h1>Station Data Hub could not start</h1><p>Please update Safari and reload this page.</p>' + detail + '</main>';
+        }
+      });
+    </script>
+    <script type="module" crossorigin src="/demos/stationdatahub/assets/index-BOqs2mFH.js?v=20260915-1"></script>
     <link rel="stylesheet" crossorigin href="/demos/stationdatahub/assets/index-hx-LnkFi.css">
+    <link rel="stylesheet" href="/demos/stationdatahub/mobile-fix.css">
   </head>
   <body>
     <div id="root"></div>

@@ -16,7 +16,8 @@
             min-height: 100vh;
             background: #f8f9fa;
             position: relative;
-            padding: 20px;
+            padding: 76px 20px 20px;
+            overflow-x: hidden;
         }
 
         .background-pattern {
@@ -30,33 +31,59 @@
             left: 0;
         }
 
+        .demo-page-nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 50;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 12px;
+            padding: 14px 20px;
+            background: #eef1f6;
+            box-shadow: 0 2px 12px rgba(30, 58, 95, 0.1);
+        }
+
         .portfolio-return {
             display: inline-flex;
             align-items: center;
             gap: 8px;
-            padding: 10px 14px;
-            border-radius: 10px;
-            background: #1e3a5f;
-            color: white;
+            color: #1e3a5f;
             text-decoration: none;
             font-size: 13px;
-            font-weight: 600;
-            box-shadow: 0 6px 18px rgba(30, 58, 95, 0.2);
-        }
-
-        .demo-page-nav {
-            position: fixed;
-            top: 18px;
-            left: 18px;
-            z-index: 50;
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-            flex-wrap: wrap;
+            font-weight: 700;
         }
 
         .portfolio-return:hover {
-            background: #2a4a7f;
+            color: #2a4a7f;
+        }
+
+        .page-tabs {
+            display: inline-flex;
+            gap: 4px;
+            background: #dde4ef;
+            padding: 4px;
+            border-radius: 999px;
+        }
+
+        .page-tab {
+            padding: 8px 14px;
+            border-radius: 999px;
+            color: #1e3a5f;
+            text-decoration: none;
+            font-size: 13px;
+            font-weight: 600;
+        }
+
+        .page-tab.is-active {
+            background: #1e3a5f;
+            color: #fff;
+        }
+
+        .page-tab:hover:not(.is-active) {
+            background: #c9d4e6;
         }
 
         .pattern-line {
@@ -393,23 +420,37 @@
         }
 
         .action-button {
-            padding: 8px 16px;
-            border: 2px solid #1e3a5f;
-            background: transparent;
+            min-height: 38px;
+            padding: 8px 13px;
+            border: 1px solid #cbd5e1;
+            background: #f8fafc;
             color: #1e3a5f;
-            border-radius: 8px;
+            border-radius: 9px;
             font-size: 12px;
-            font-weight: 600;
+            font-weight: 700;
             cursor: pointer;
             transition: all 0.3s ease;
             text-transform: uppercase;
             letter-spacing: 0.5px;
+            white-space: nowrap;
         }
 
             .action-button:hover {
                 background: #1e3a5f;
                 color: white;
                 transform: translateY(-1px);
+            }
+
+        .action-button.delete-btn {
+            border-color: #fecaca;
+            background: #fff7f7;
+            color: #b42318;
+        }
+
+            .action-button.delete-btn:hover {
+                background: #b42318;
+                border-color: #b42318;
+                color: white;
             }
 
             .action-button:disabled {
@@ -464,8 +505,30 @@
 
         /* Responsive design */
         @media (max-width: 768px) {
+            body {
+                padding: 68px 12px 16px;
+            }
+
+            .demo-page-nav {
+                padding: 10px 12px;
+            }
+
+            .portfolio-return {
+                font-size: 12px;
+            }
+
+            .page-tabs {
+                gap: 2px;
+                padding: 3px;
+            }
+
+            .page-tab {
+                padding: 7px 9px;
+                font-size: 11px;
+            }
+
             .container {
-                padding: 10px;
+                padding: 0;
             }
 
             .header-section {
@@ -490,12 +553,60 @@
             }
 
             .customers-table {
-                font-size: 14px;
+                display: block;
+                margin-top: 10px;
             }
 
-                .customers-table th,
+                .customers-table thead {
+                    display: none;
+                }
+
+                .customers-table tbody,
+                .customers-table tr,
                 .customers-table td {
-                    padding: 12px 8px;
+                    display: block;
+                    width: 100%;
+                }
+
+                .customers-table tr {
+                    padding: 16px 0;
+                    border-bottom: 1px solid #e5e7eb;
+                }
+
+                .customers-table td {
+                    display: flex;
+                    justify-content: space-between;
+                    gap: 16px;
+                    padding: 7px 0;
+                    border: 0;
+                    text-align: right;
+                }
+
+                .customers-table td::before {
+                    content: attr(data-label);
+                    color: #64748b;
+                    font-size: 11px;
+                    font-weight: 700;
+                    letter-spacing: 0.5px;
+                    text-align: left;
+                    text-transform: uppercase;
+                }
+
+                .customers-table td:last-child {
+                    display: flex;
+                    justify-content: flex-start;
+                    flex-wrap: wrap;
+                    gap: 8px;
+                    padding-top: 12px;
+                }
+
+                .customers-table td:last-child::before {
+                    flex-basis: 100%;
+                }
+
+                .action-button {
+                    flex: 1 1 130px;
+                    min-width: 0;
                 }
         }
 
@@ -519,9 +630,11 @@
 </head>
 <body>
     <header class="demo-page-nav">
-        <a class="portfolio-return" href="/#projects" onclick="window.location.href='/#projects'; return false;">← Back to Portfolio</a>
-        <a class="portfolio-return" href="/demos/travelfairsimreg/pages/registration.html?v=nav-2">Registration</a>
-        <a class="portfolio-return" href="/demos/travelfairsimreg/pages/admin.html?v=nav-2">Admin Portal</a>
+        <a class="portfolio-return" href="/?project=travelfairsimreg#travelfairsimreg" onclick="window.location.href='/?project=travelfairsimreg#travelfairsimreg'; return false;">← Back to Portfolio</a>
+        <nav class="page-tabs">
+            <a class="page-tab" href="/demos/travelfairsimreg/pages/registration.html?v=nav-2">Registration</a>
+            <a class="page-tab is-active" href="/demos/travelfairsimreg/pages/admin.html?v=nav-2">Admin Portal</a>
+        </nav>
     </header>
 
     <div class="background-pattern">
@@ -706,12 +819,12 @@
 
                 return `
                     <tr id="row-${customer.id}">
-                        <td>${customer.fullName}</td>
-                        <td>${customer.mobileNumber}</td>
-                        <td>${new Date(customer.preferredDate).toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })}</td>
-                        <td>${new Date(customer.registrationDate).toLocaleDateString()}</td>
-                        <td><span class="status-badge ${statusClass}">${statusText}</span></td>
-                        <td>
+                        <td data-label="Full name">${customer.fullName}</td>
+                        <td data-label="Mobile number">${customer.mobileNumber}</td>
+                        <td data-label="Time slot">${new Date(customer.preferredDate).toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })}</td>
+                        <td data-label="Registration date">${new Date(customer.registrationDate).toLocaleDateString()}</td>
+                        <td data-label="Status"><span class="status-badge ${statusClass}">${statusText}</span></td>
+                        <td data-label="Actions">
                             <button class="action-button" onclick="markAsDone(${customer.id})">Mark as Done</button>
                             <button class="action-button delete-btn" onclick="deleteCustomer(${customer.id})">Delete</button>
                         </td>

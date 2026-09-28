@@ -51,6 +51,19 @@ http://localhost:5000
 dotnet publish -c Release -o ./publish
 ```
 
+### Publishing the Surge Static Site
+
+The portfolio export is kept in `surge-dist`. Before deploying, synchronize the
+portfolio assets and demo applications from `wwwroot`:
+
+```powershell
+./Publish-Surge.ps1
+surge ./surge-dist
+```
+
+This step is required because `surge-dist` is generated output and is excluded
+from source control.
+
 ## Customization
 
 ### Update Personal Information

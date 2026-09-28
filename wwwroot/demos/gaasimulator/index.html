@@ -4,17 +4,23 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>GAA Simulator Training System</title>
-  <style>
-    html, body { width: 100%; min-height: 100%; margin: 0; }
-    body { min-height: 100vh; background: #f6f7f9; }
-    .portfolio-bar { display: flex; align-items: center; height: 48px; padding: 0 20px; background: #f6f7f9; border-bottom: 1px solid #d7dce3; }
-    .portfolio-bar a { display: inline-flex; align-items: center; padding: 7px 11px; color: #0b2a52; border: 1px solid #0b2a52; border-radius: 4px; font: 700 13px "Segoe UI", sans-serif; text-decoration: none; }
-    .portfolio-bar a:hover { color: #fff; background: #0b2a52; }
-    iframe { display: block; width: 100%; height: calc(100vh - 48px); margin: 0; border: 0; }
-  </style>
+  <link rel="stylesheet" href="site.css">
 </head>
 <body>
-  <div class="portfolio-bar"><a href="/#projects">&larr; Back to portfolio</a></div>
-  <iframe src="http://localhost:5095/" title="GAA Simulator Training System"></iframe>
+  <div class="portfolio-row"><a href="/?project=gaasimulator#gaasimulator">&larr; Back to portfolio</a><span>Portfolio demo</span></div>
+  <header class="header">
+    <div class="brand"><b>GAA</b><i></i><div><strong>Simulator Training System</strong><small>Operations and training management</small></div></div>
+    <div class="operator"><span>Operations Manager</span><b>OM</b></div>
+  </header>
+  <nav class="nav" aria-label="Training system views">
+    <button class="active" data-view="dashboard">Dashboard</button>
+    <button data-view="portal">Simulator Portal</button>
+    <button data-view="programs">Programs</button>
+    <button data-view="trainees">Trainees</button>
+    <button data-view="reports">Reports</button>
+    <button data-view="utilization">Utilization</button>
+  </nav>
+  <main id="app"></main>
+  <script src="app.js"></script>
 </body>
 </html>

@@ -10,8 +10,9 @@ document.addEventListener('DOMContentLoaded', () => {
     setupSmoothScroll();
     setupActiveSection();
     setupProjectDetails();
-    setupCounters();
+    setupProjectMasonry();
     setupResumeLinks();
+    setupIncomingProjectHash();
 
     // Disable heavy hero motion effects.
     const particlesCanvas = document.getElementById('particles-canvas');
@@ -61,6 +62,34 @@ function setupMobileMenu() {
             closeMenu();
         }
     });
+}
+
+function setupIncomingProjectHash() {
+    const scrollToHashTarget = () => {
+        const project = new URLSearchParams(window.location.search).get('project');
+        const hash = window.location.hash || (project ? `#${project}` : '');
+        if (!hash || hash === '#') return;
+
+        const target = document.getElementById(decodeURIComponent(hash.slice(1)));
+        if (!target) return;
+
+        window.requestAnimationFrame(() => {
+            const navbarHeight = navbar ? navbar.getBoundingClientRect().height : 0;
+            const targetTop = target.getBoundingClientRect().top + window.scrollY - navbarHeight - 16;
+            window.scrollTo({ top: Math.max(0, targetTop), behavior: 'auto' });
+        });
+    };
+
+    const settleIncomingHash = () => {
+        scrollToHashTarget();
+        window.setTimeout(scrollToHashTarget, 120);
+        window.setTimeout(scrollToHashTarget, 1000);
+    };
+
+    window.addEventListener('hashchange', settleIncomingHash);
+    window.addEventListener('popstate', settleIncomingHash);
+    window.addEventListener('load', settleIncomingHash, { once: true });
+    window.setTimeout(settleIncomingHash, 0);
 }
 
 function setupSmoothScroll() {
@@ -131,41 +160,47 @@ function setupProjectDetails() {
     };
 }
 
-function setupCounters() {
-    const counters = document.querySelectorAll('.stat-number[data-target]');
-    if (!counters.length) return;
+function setupProjectMasonry() {
+    const grid = document.querySelector('.projects-grid');
+    if (!grid) return;
 
-    const animateCounter = (element) => {
-        const target = parseInt(element.getAttribute('data-target') || '0', 10);
-        if (Number.isNaN(target)) return;
+    const cards = [...grid.querySelectorAll('.project-card')];
+    let layoutFrame = 0;
 
-        const duration = 1200;
-        const startTime = performance.now();
+    const layout = () => {
+        cancelAnimationFrame(layoutFrame);
+        layoutFrame = requestAnimationFrame(() => {
+            const styles = getComputedStyle(grid);
+            const columns = styles.gridTemplateColumns.split(' ').length;
+            const columnGap = parseFloat(styles.columnGap) || 0;
+            const rowGap = parseFloat(styles.rowGap) || 0;
+            const columnWidth = (grid.clientWidth - columnGap * (columns - 1)) / columns;
+            const columnHeights = Array(columns).fill(0);
 
-        const step = (time) => {
-            const progress = Math.min((time - startTime) / duration, 1);
-            element.textContent = String(Math.floor(progress * target));
-            if (progress < 1) {
-                requestAnimationFrame(step);
-            } else {
-                element.textContent = String(target);
-            }
-        };
+            grid.classList.add('is-masonry');
 
-        requestAnimationFrame(step);
+            cards.forEach((card, index) => {
+                const column = index < columns
+                    ? index
+                    : columnHeights.indexOf(Math.min(...columnHeights));
+
+                card.style.width = `${columnWidth}px`;
+                card.style.left = `${column * (columnWidth + columnGap)}px`;
+                card.style.top = `${columnHeights[column]}px`;
+                columnHeights[column] += card.offsetHeight + rowGap;
+            });
+
+            grid.style.height = `${Math.max(...columnHeights) - rowGap}px`;
+        });
     };
 
-    const observer = new IntersectionObserver((entries) => {
-        entries.forEach((entry) => {
-            if (!entry.isIntersecting) return;
-            const el = entry.target;
-            if (el.classList.contains('counted')) return;
-            animateCounter(el);
-            el.classList.add('counted');
-        });
-    }, { threshold: 0.5 });
+    window.addEventListener('resize', layout, { passive: true });
+    if (typeof ResizeObserver !== 'undefined') {
+        const observer = new ResizeObserver(layout);
+        cards.forEach((card) => observer.observe(card));
+    }
 
-    counters.forEach((counter) => observer.observe(counter));
+    layout();
 }
 
 function setupResumeLinks() {
