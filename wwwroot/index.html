@@ -1,0 +1,653 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Home - Portfolio</title>
+    <link rel="icon" href="/favicon.ico" sizes="any" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png" />
+    <link rel="icon" type="image/png" sizes="192x192" href="/favicon-192.png" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+    <link rel="stylesheet" href="/css/site.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="#home" class="nav-logo">
+                <span class="logo-bracket">&lt;</span>
+                <span class="logo-text">Malak Alsaeed</span>
+                <span class="logo-bracket">/&gt;</span>
+            </a>
+
+            <button class="nav-toggle" type="button" aria-label="Toggle menu" aria-expanded="false">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+
+            <div class="nav-menu" id="navMenu">
+                <a href="#home" class="nav-link">Home</a>
+                <a href="#about" class="nav-link">About</a>
+                <a href="#projects" class="nav-link">Projects</a>
+                <a href="#skills" class="nav-link">Skills</a>
+                <a href="#contact" class="nav-link">Contact</a>
+            </div>
+        </div>
+    </nav>
+
+    <main>
+<!-- Hero Section -->
+<section id="home" class="hero">
+    <canvas id="particles-canvas"></canvas>
+    <div class="hero-content">
+        <h1 class="hero-title fade-in">
+            <span class="text-line highlight-name">Malak Alsaeed</span>
+        </h1>
+        <h2 class="hero-subtitle fade-in-delay">
+            <span class="typing-text">Software Developer | Full-Stack Engineer</span>
+        </h2>
+        <p class="hero-description hero-tech-stack fade-in-delay-2">
+            C#, .NET · React · TypeScript · SQL · Node.js
+        </p>
+        <div class="hero-contact-links fade-in-delay-2" aria-label="Contact details">
+            <a href="tel:+97333859939" class="hero-contact-link">
+                <i class="fas fa-phone" aria-hidden="true"></i>
+                <strong>+973 33859939</strong>
+            </a>
+            <a href="mailto:alsaeedmalak8@gmail.com" class="hero-contact-link">
+                <i class="fas fa-envelope" aria-hidden="true"></i>
+                <strong>alsaeedmalak8@gmail.com</strong>
+            </a>
+        </div>
+        <div class="hero-buttons fade-in-delay-3">
+            <a href="#projects" class="cta-button primary">
+                <span>View Projects</span>
+                <i class="fas fa-arrow-right"></i>
+            </a>
+            <a href="#" class="cta-button secondary" data-resume-link>
+                <span>Download CV</span>
+                <i class="fas fa-download"></i>
+            </a>
+            <a href="https://www.linkedin.com/in/malak-alsaeed/" class="cta-button tertiary" target="_blank" rel="noopener noreferrer">
+                <span>LinkedIn</span>
+                <i class="fab fa-linkedin" aria-hidden="true"></i>
+            </a>
+        </div>
+    </div>
+</section>
+
+<!-- About Section -->
+<section id="about" class="about">
+    <div class="container">
+        <h2 class="section-title">
+            <span class="title-number">01.</span> About Me
+            <span class="title-decoration"></span>
+        </h2>
+        <div class="about-grid">
+            <div class="about-content">
+                <div class="about-intro">
+                    <p class="about-text highlight-text">
+                        I’m a <strong>Software Developer and Full-Stack Engineer</strong> based in Bahrain, specializing in
+                        <strong>C#, .NET, React, TypeScript, SQL, and Node.js</strong>.
+                    </p>
+                    <p class="about-text">
+                        I have experience developing and contributing to real-world applications across
+                        <strong>operational workflows, crisis management, station operations, aviation systems, and internal business tools</strong>.
+                    </p>
+                    <p class="about-text">
+                        My experience covers full-stack development, REST APIs, database integration, authentication and
+                        authorization, dashboards, and application deployment. I enjoy turning business requirements into
+                        reliable, practical software that people can use every day.
+                    </p>
+                    <p class="about-text">
+                        I hold a <strong>Bachelor’s degree in Information &amp; Communication Technology – Programming from Bahrain Polytechnic</strong>
+                        and have professional experience through <strong>Computer World, contracted with Gulf Air</strong>, as well as
+                        training experience at <strong>AGU</strong>.
+                    </p>
+                </div>
+            </div>
+
+            <div class="about-visual">
+                <h3 class="experience-heading">Experience &amp; Background</h3>
+                <div class="experience-timeline">
+                    <div class="timeline-item">
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-content">
+                            <h4>Software Developer | Gulf Air (via Computer World)</h4>
+                            <p>Contracted with Gulf Air · Developed and contributed to operational and aviation software systems</p>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-content">
+                            <h4>Bahrain Polytechnic</h4>
+                            <p>Bachelor of ICT – Programming · 2026</p>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-content">
+                            <h4>AGU — Trainee</h4>
+                            <p>PHP · Laravel · PDF data extraction &amp; processing</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Projects Section -->
+<section id="projects" class="projects">
+    <div class="container">
+        <h2 class="section-title">
+            <span class="title-number">02.</span> Featured Projects
+            <span class="title-decoration"></span>
+        </h2>
+        <div class="projects-grid">
+
+            <div class="project-card" id="stationdatahub">
+                <div class="project-icon">
+                    <i class="fas fa-tower-broadcast"></i>
+                </div>
+                <h3 class="project-title">Station Data Hub</h3>
+                <p class="project-description">Enterprise station-information platform supporting operational station data, workflows, reporting, and administrative management.</p>
+                <ul class="project-features">
+                    <li>Station information and operational workflows</li>
+                    <li>Role-based access with Microsoft Entra ID</li>
+                    <li>Database integration and reporting</li>
+                    <li>Administrative management tools</li>
+                </ul>
+                <div class="project-tech">
+                    <span class="tech-label">Technologies:</span>
+                    <span class="tech-tag">C#</span>
+                    <span class="tech-tag">ASP.NET Core</span>
+                    <span class="tech-tag">.NET 10</span>
+                    <span class="tech-tag">React</span>
+                    <span class="tech-tag">TypeScript</span>
+                    <span class="tech-tag">SQL Server</span>
+                    <span class="tech-tag">Docker</span>
+                    <span class="tech-tag">Microsoft Entra ID</span>
+                </div>
+                <a class="project-demo-link" href="/demos/stationdatahub/?v=20260915-returns-4">
+                    <i class="fas fa-play"></i> View demo
+                </a>
+                <button class="project-expand-btn" onclick="toggleProjectDetails(this)">
+                    <i class="fas fa-chevron-down"></i> Learn More
+                </button>
+                <div class="project-details">
+                    <p>ASP.NET Core API with a React and TypeScript frontend backed by SQL Server. Microsoft Entra ID supports authentication, while role-based permissions separate administrator, manager, and read-only access. The platform maintains station contacts, function areas, required roles, and controlled documents, with delegation, coverage reporting, audit logging, and Docker-based deployment.</p>
+                </div>
+            </div>
+
+            <div class="project-card" id="gaasimulator">
+                <div class="project-icon">
+                    <i class="fas fa-graduation-cap"></i>
+                </div>
+                <h3 class="project-title">GAA Simulator Training System</h3>
+                <p class="project-description">Simulator management platform supporting training bookings, scheduling, availability, utilization tracking, reporting, and analytics.</p>
+                <ul class="project-features">
+                    <li>Simulator booking and scheduling</li>
+                    <li>Availability and utilization tracking</li>
+                    <li>Operational reporting</li>
+                    <li>Analytics and instructor dashboards</li>
+                </ul>
+                <div class="project-tech">
+                    <span class="tech-label">Technologies:</span>
+                    <span class="tech-tag">C#</span>
+                    <span class="tech-tag">.NET 10</span>
+                    <span class="tech-tag">ASP.NET Core</span>
+                    <span class="tech-tag">Razor Pages</span>
+                    <span class="tech-tag">SQL Server</span>
+                    <span class="tech-tag">Microsoft Entra ID</span>
+                </div>
+                <a class="project-demo-link" href="/demos/gaasimulator/">
+                    <i class="fas fa-play"></i> View demo
+                </a>
+                <button class="project-expand-btn" onclick="toggleProjectDetails(this)">
+                    <i class="fas fa-chevron-down"></i> Learn More
+                </button>
+                <div class="project-details">
+                    <p>ASP.NET Core Razor Pages on SQL Server. It manages simulator slot booking across devices, instructor assignment and payment sheets, trainee session records, and cancellation or no-show handling. Utilization reporting breaks hours down by simulator, department, and period so under-used capacity and scheduling clashes surface before they affect training delivery.</p>
+                </div>
+            </div>
+
+            <div class="project-card" id="seatmap">
+                <div class="project-icon">
+                    <i class="fas fa-chair"></i>
+                </div>
+                <h3 class="project-title">Seat Map Application</h3>
+                <p class="project-description">.NET MAUI tablet application providing interactive aircraft cabin layouts for crew and operational workflows.</p>
+                <ul class="project-features">
+                    <li>Interactive aircraft seat maps</li>
+                    <li>Multiple aircraft configurations</li>
+                    <li>Cabin layout visualization</li>
+                    <li>Tablet-focused operational workflows</li>
+                </ul>
+                <div class="project-tech">
+                    <span class="tech-label">Technologies:</span>
+                    <span class="tech-tag">C#</span>
+                    <span class="tech-tag">.NET MAUI</span>
+                    <span class="tech-tag">XAML</span>
+                </div>
+                <a class="project-demo-link" href="/demos/seatmap/">
+                    <i class="fas fa-play"></i> View demo
+                </a>
+                <button class="project-expand-btn" onclick="toggleProjectDetails(this)">
+                    <i class="fas fa-chevron-down"></i> Learn More
+                </button>
+                <div class="project-details">
+                    <p>A .NET MAUI tablet application written in XAML for cabin-crew devices. It renders the seat layout for each aircraft configuration with cabin classes, exit rows, and per-seat states, so crew can locate passengers, flag special assistance, and capture onboard observations without paper seating charts.</p>
+                </div>
+            </div>
+
+            <div class="project-card" id="cmccrewcard">
+                <div class="project-icon">
+                    <i class="fas fa-id-card"></i>
+                </div>
+                <h3 class="project-title">CMC Crew Card Generation</h3>
+                <p class="project-description">Application for generating and managing crew certificate cards with preview, registration, and print-ready documentation workflows.</p>
+                <ul class="project-features">
+                    <li>Crew certificate generation</li>
+                    <li>ICAO TD1 card preview</li>
+                    <li>Local card register management</li>
+                    <li>Print-ready document output</li>
+                </ul>
+                <div class="project-tech">
+                    <span class="tech-label">Technologies:</span>
+                    <span class="tech-tag">C#</span>
+                    <span class="tech-tag">.NET</span>
+                </div>
+                <a class="project-demo-link" href="/demos/cmccrewcard/?v=offline-cmc-2">
+                    <i class="fas fa-play"></i> View demo
+                </a>
+                <button class="project-expand-btn" onclick="toggleProjectDetails(this)">
+                    <i class="fas fa-chevron-down"></i> Learn More
+                </button>
+                <div class="project-details">
+                    <p>Generates crew certificate cards to the ICAO TD1 layout. The workflow covers data entry, a live card preview with photo and machine-readable zone, a register of issued cards with expiry reminders and reissue handling, and print-ready output sized for card stock. The portfolio version runs entirely offline on dummy data.</p>
+                </div>
+            </div>
+
+            <div class="project-card" id="rio">
+                <div class="project-icon">
+                    <i class="fas fa-clipboard-check"></i>
+                </div>
+                <h3 class="project-title">RIO</h3>
+                <p class="project-description">Flight-delay follow-up platform for monitoring delayed sectors, managing delay ownership, and supporting operational follow-up.</p>
+                <ul class="project-features">
+                    <li>Delay queue with accept and assignment workflows</li>
+                    <li>IATA delay-code management</li>
+                    <li>Departure information sheets</li>
+                    <li>OTP and delay-code analytics</li>
+                </ul>
+                <div class="project-tech">
+                    <span class="tech-label">Technologies:</span>
+                    <span class="tech-tag">Blazor</span>
+                    <span class="tech-tag">C#</span>
+                    <span class="tech-tag">Oracle</span>
+                </div>
+                <a class="project-demo-link" href="/demos/rio/">
+                    <i class="fas fa-play"></i> View demo
+                </a>
+                <button class="project-expand-btn" onclick="toggleProjectDetails(this)">
+                    <i class="fas fa-chevron-down"></i> Learn More
+                </button>
+                <div class="project-details">
+                    <p>Blazor front end over an Oracle operational database. Sectors delayed beyond the reporting threshold are pushed into a queue where controllers accept them, apply IATA delay codes with attributed minutes, and assign an owning department such as Ground Operations, Dispatch, or MCC. Follow-ups move through accepted, in-progress, and closed states with comment history, and the dashboard reports departure and arrival OTP against target alongside the most frequent delay causes.</p>
+                </div>
+            </div>
+
+            <div class="project-card" id="flightops">
+                <div class="project-icon">
+                    <i class="fas fa-plane-departure"></i>
+                </div>
+                <h3 class="project-title">FlightOps Executive</h3>
+                <p class="project-description">Network operations platform providing live flight surveillance, operational KPIs, disruption intelligence, and administration tools.</p>
+                <ul class="project-features">
+                    <li>Live airborne tracking</li>
+                    <li>On-time performance and movement KPIs</li>
+                    <li>Disruption and delay analysis</li>
+                    <li>Route, fleet, and user administration</li>
+                </ul>
+                <div class="project-tech">
+                    <span class="tech-label">Technologies:</span>
+                    <span class="tech-tag">C#</span>
+                    <span class="tech-tag">ASP.NET Core</span>
+                    <span class="tech-tag">Razor Pages</span>
+                    <span class="tech-tag">SignalR</span>
+                    <span class="tech-tag">EF Core</span>
+                </div>
+                <a class="project-demo-link" href="/demos/flightops/">
+                    <i class="fas fa-play"></i> View demo
+                </a>
+                <button class="project-expand-btn" onclick="toggleProjectDetails(this)">
+                    <i class="fas fa-chevron-down"></i> Learn More
+                </button>
+                <div class="project-details">
+                    <p>ASP.NET Core Razor Pages with EF Core and SignalR. A fixed route network seeds the daily schedule, and hosted background services advance every flight through boarding, departure, en-route, and arrival while injecting delays, cancellations, and disruption records. The operations map interpolates aircraft positions between origin and destination in real time, sitting alongside movement and OTP counters, status and delay-reason breakdowns, a critical-alert feed, and admin screens for route dispatch, instant flight injection, and role-based user access.</p>
+                </div>
+            </div>
+
+            <div class="project-card" id="cfms">
+                <div class="project-icon">
+                    <i class="fas fa-exclamation-triangle"></i>
+                </div>
+                <h3 class="project-title">CFMS</h3>
+                <p class="project-description">Crisis and case-management platform supporting incident workflows, public forms, case review, family matching, and reporting.</p>
+                <ul class="project-features">
+                    <li>Incident and case-management workflows</li>
+                    <li>Role-based case review and reporting</li>
+                    <li>QR-based public forms</li>
+                    <li>Family matching and case insights</li>
+                </ul>
+                <div class="project-tech">
+                    <span class="tech-label">Technologies:</span>
+                    <span class="tech-tag">C#</span>
+                    <span class="tech-tag">.NET 10</span>
+                    <span class="tech-tag">ASP.NET Core</span>
+                    <span class="tech-tag">PostgreSQL</span>
+                    <span class="tech-tag">React</span>
+                    <span class="tech-tag">TypeScript</span>
+                    <span class="tech-tag">Tailwind CSS</span>
+                    <span class="tech-tag">Microsoft Entra ID</span>
+                </div>
+                <a class="project-demo-link" href="/demos/cfms/">
+                    <i class="fas fa-play"></i> View demo
+                </a>
+                <button class="project-expand-btn" onclick="toggleProjectDetails(this)">
+                    <i class="fas fa-chevron-down"></i> Learn More
+                </button>
+                <div class="project-details">
+                    <p>.NET API with a React and TypeScript frontend over PostgreSQL. It handles incident creation and escalation, public enquiry forms for relatives, structured case files, and a reviewer-driven queue that matches enquiries against recovered records. Access is deliberately narrow: dashboards show aggregate counts only, and detailed reporting or exports sit behind separate role-restricted permissions.</p>
+                </div>
+            </div>
+
+            <div class="project-card" id="travelfairsimreg">
+                <div class="project-icon">
+                    <i class="fas fa-clipboard-list"></i>
+                </div>
+                <h3 class="project-title">TravelFairSimReg</h3>
+                <p class="project-description">Event registration and session-management application supporting attendee registration, session capacity, confirmations, and operational administration.</p>
+                <ul class="project-features">
+                    <li>Validated attendee registration</li>
+                    <li>Session scheduling with capacity limits</li>
+                    <li>Confirmation and reference management</li>
+                    <li>Administrative registration overview</li>
+                </ul>
+                <div class="project-tech">
+                    <span class="tech-label">Technologies:</span>
+                    <span class="tech-tag">C#</span>
+                    <span class="tech-tag">.NET</span>
+                    <span class="tech-tag">React</span>
+                    <span class="tech-tag">SQL Server</span>
+                </div>
+                <a class="project-demo-link" href="/demos/travelfairsimreg/pages/registration.html?v=offline-demo-3" target="_blank" rel="noopener">
+                    <i class="fas fa-play"></i> View demo
+                </a>
+                <button class="project-expand-btn" onclick="toggleProjectDetails(this)">
+                    <i class="fas fa-chevron-down"></i> Learn More
+                </button>
+                <div class="project-details">
+                    <p>.NET backend with a React frontend on SQL Server. Visitors register for travel fair and simulator sessions through validated forms, slots enforce capacity so sessions cannot be oversubscribed, and each registration produces a confirmation record. Staff get a consolidated view of registrations per session to prepare rosters and manage walk-ins on the day.</p>
+                </div>
+            </div>
+
+            <div class="project-card" id="garageflow">
+                <div class="project-icon">
+                    <i class="fas fa-warehouse"></i>
+                </div>
+                <h3 class="project-title">GarageFlow</h3>
+                <p class="project-description">Multi-tenant garage management application covering customer, vehicle, appointment, job-card, inventory, invoicing, and payment workflows.</p>
+                <ul class="project-features">
+                    <li>Multi-tenant architecture</li>
+                    <li>Customer, vehicle, and job management</li>
+                    <li>Inventory and supplier workflows</li>
+                    <li>Invoicing, payments, and reporting</li>
+                </ul>
+                <div class="project-tech">
+                    <span class="tech-label">Technologies:</span>
+                    <span class="tech-tag">Python</span>
+                    <span class="tech-tag">Django</span>
+                    <span class="tech-tag">Django REST Framework</span>
+                    <span class="tech-tag">React</span>
+                    <span class="tech-tag">TypeScript</span>
+                    <span class="tech-tag">PostgreSQL</span>
+                </div>
+                <a class="project-demo-link" href="/demos/garageflow/">
+                    <i class="fas fa-play"></i> View demo
+                </a>
+                <button class="project-expand-btn" onclick="toggleProjectDetails(this)">
+                    <i class="fas fa-chevron-down"></i> Learn More
+                </button>
+                <div class="project-details">
+                    <p>Django REST backend with a React and TypeScript frontend on PostgreSQL. Tenant-scoped data isolation keeps every garage's customers, vehicles, and stock separate. It covers the full service lifecycle &mdash; appointment booking, job card assignment, parts consumption from inventory, supplier purchase orders, invoicing, payment capture, and expense tracking &mdash; with dashboards for revenue, technician workload, and stock movement.</p>
+                </div>
+            </div>
+
+            <div class="project-card">
+                <div class="project-icon">
+                    <i class="fas fa-comments"></i>
+                </div>
+                <h3 class="project-title">Call Center Chatbot</h3>
+                <p class="project-description">Digital call-center support solution designed to streamline customer interactions and service workflows.</p>
+                <ul class="project-features">
+                    <li>Customer service and digital service workflows</li>
+                    <li>Debugged chatbot behavior and conversation flows</li>
+                    <li>Tested chatbot responses and service scenarios</li>
+                    <li>Validated customer interaction handling</li>
+                </ul>
+                <div class="project-tech">
+                    <span class="tech-label">Work performed:</span>
+                    <span class="tech-tag">Debugging</span>
+                    <span class="tech-tag">Testing</span>
+                </div>
+                <button class="project-expand-btn" onclick="toggleProjectDetails(this)">
+                    <i class="fas fa-chevron-down"></i> Learn More
+                </button>
+                <div class="project-details">
+                    <p>A digital support layer for the contact centre that handles common customer enquiries through guided conversation flows, routes anything outside its scope to a live agent with the conversation context attached, and logs interactions so recurring questions can be turned into self-service answers.</p>
+                </div>
+            </div>
+
+            <div class="project-card">
+                <div class="project-icon">
+                    <i class="fas fa-code-branch"></i>
+                </div>
+                <h3 class="project-title">Genesys APIs</h3>
+                <p class="project-description">REST API integrations supporting secure data exchange with Genesys-based operational workflows.</p>
+                <ul class="project-features">
+                    <li>REST API development</li>
+                    <li>Secure data exchange</li>
+                    <li>System integration</li>
+                    <li>Operational data connectivity</li>
+                </ul>
+                <div class="project-tech">
+                    <span class="tech-label">Technologies:</span>
+                    <span class="tech-tag">C#</span>
+                    <span class="tech-tag">ASP.NET Core Web API</span>
+                    <span class="tech-tag">.NET</span>
+                    <span class="tech-tag">REST APIs</span>
+                    <span class="tech-tag">Swagger/OpenAPI</span>
+                    <span class="tech-tag">Postman</span>
+                    <span class="tech-tag">HTTP/HTTPS</span>
+                    <span class="tech-tag">JSON</span>
+                </div>
+                <button class="project-expand-btn" onclick="toggleProjectDetails(this)">
+                    <i class="fas fa-chevron-down"></i> Learn More
+                </button>
+                <div class="project-details">
+                    <p>C# REST services that broker data between Genesys contact-centre workflows and internal operational systems. They cover authenticated endpoints, request validation, payload mapping between the two domains, and structured logging so integration failures are traceable rather than silent.</p>
+                </div>
+            </div>
+
+            <div class="project-card">
+                <div class="project-icon">
+                    <i class="fas fa-globe"></i>
+                </div>
+                <h3 class="project-title">Globify.bh</h3>
+                <p class="project-description">Full-stack web application built with Laravel and Livewire, featuring a responsive interface and streamlined deployment workflow.</p>
+                <ul class="project-features">
+                    <li>Laravel Livewire frontend</li>
+                    <li>Blade and Tailwind CSS interface</li>
+                    <li>Flux UI components</li>
+                    <li>GitHub-based development workflow</li>
+                </ul>
+                <div class="project-tech">
+                    <span class="tech-label">Technologies:</span>
+                    <span class="tech-tag">PHP</span>
+                    <span class="tech-tag">Laravel</span>
+                    <span class="tech-tag">Livewire</span>
+                    <span class="tech-tag">Blade</span>
+                    <span class="tech-tag">Tailwind CSS</span>
+                    <span class="tech-tag">Flux UI</span>
+                    <span class="tech-tag">SQLite</span>
+                    <span class="tech-tag">GitHub</span>
+                </div>
+                <button class="project-expand-btn" onclick="toggleProjectDetails(this)">
+                    <i class="fas fa-chevron-down"></i> Learn More
+                </button>
+                <div class="project-details">
+                    <p>Laravel with Livewire, Blade components, Tailwind CSS, and Flux UI on SQLite. Pages are built from reusable components with server-driven interactivity, form handling and validation run through Livewire, and releases follow a Git-based workflow from local development to the live site.</p>
+                </div>
+            </div>
+
+            <div class="project-card">
+                <div class="project-icon">
+                    <i class="fas fa-wallet"></i>
+                </div>
+                <h3 class="project-title">Finance Tracker</h3>
+                <p class="project-description">Personal finance application for managing expenses, budgets, and financial insights through a centralized dashboard.</p>
+                <ul class="project-features">
+                    <li>Expense tracking</li>
+                    <li>Budget management</li>
+                    <li>Financial analytics</li>
+                    <li>Dashboard-based financial overview</li>
+                </ul>
+                <div class="project-tech">
+                    <span class="tech-label">Technologies:</span>
+                    <span class="tech-tag">C#</span>
+                    <span class="tech-tag">.NET 10</span>
+                    <span class="tech-tag">ASP.NET Core Razor Pages</span>
+                    <span class="tech-tag">Entity Framework Core</span>
+                    <span class="tech-tag">SQLite</span>
+                    <span class="tech-tag">Chart.js</span>
+                </div>
+                <button class="project-expand-btn" onclick="toggleProjectDetails(this)">
+                    <i class="fas fa-chevron-down"></i> Learn More
+                </button>
+                <div class="project-details">
+                    <p>Personal budgeting application with categorised income and expense entry, monthly budget limits shown as progress against target, recurring transaction handling, and charts that break spending down by category and period to make overspending visible early.</p>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<!-- Skills Section -->
+<section id="skills" class="skills">
+    <div class="container">
+        <h2 class="section-title">
+            <span class="title-number">03.</span> Technical Skills
+            <span class="title-decoration"></span>
+        </h2>
+        <div class="skills-grid">
+            <div class="skill-category">
+                <h3 class="skill-category-title">Languages</h3>
+                <div class="skill-tags">
+                    <span class="skill-tag">C#</span>
+                    <span class="skill-tag">Python</span>
+                    <span class="skill-tag">Go</span>
+                    <span class="skill-tag">TypeScript</span>
+                    <span class="skill-tag">JavaScript</span>
+                    <span class="skill-tag">Swift</span>
+                    <span class="skill-tag">PHP</span>
+                    <span class="skill-tag">SQL</span>
+                </div>
+            </div>
+            <div class="skill-category">
+                <h3 class="skill-category-title">Frameworks & Platforms</h3>
+                <div class="skill-tags">
+                    <span class="skill-tag">.NET 8/10</span>
+                    <span class="skill-tag">ASP.NET Core</span>
+                    <span class="skill-tag">.NET MAUI</span>
+                    <span class="skill-tag">Django</span>
+                    <span class="skill-tag">DRF</span>
+                    <span class="skill-tag">React</span>
+                    <span class="skill-tag">Laravel</span>
+                    <span class="skill-tag">Livewire</span>
+                </div>
+            </div>
+            <div class="skill-category">
+                <h3 class="skill-category-title">Data, APIs & Testing</h3>
+                <div class="skill-tags">
+                    <span class="skill-tag">REST APIs</span>
+                    <span class="skill-tag">Entity Framework</span>
+                    <span class="skill-tag">Celery</span>
+                    <span class="skill-tag">PostgreSQL</span>
+                    <span class="skill-tag">SQL Server</span>
+                    <span class="skill-tag">Oracle</span>
+                    <span class="skill-tag">Redis</span>
+                    <span class="skill-tag">Pytest</span>
+                    <span class="skill-tag">Pandas</span>
+                </div>
+            </div>
+            <div class="skill-category">
+                <h3 class="skill-category-title">Core Skills</h3>
+                <div class="skill-tags">
+                    <span class="skill-tag">Full-Stack Development</span>
+                    <span class="skill-tag">System Integration</span>
+                    <span class="skill-tag">Authentication & Authorization</span>
+                    <span class="skill-tag">Workflow Automation</span>
+                    <span class="skill-tag">Testing</span>
+                    <span class="skill-tag">Debugging</span>
+                    <span class="skill-tag">Production Support</span>
+                    <span class="skill-tag">PDF Data Extraction</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Contact Section -->
+<section id="contact" class="contact">
+    <div class="container">
+        <h2 class="section-title">
+            <span class="title-number">04.</span> Get In Touch
+            <span class="title-decoration"></span>
+        </h2>
+        <div class="contact-content">
+            <p class="contact-text">Open to discussing software engineering roles, enterprise systems, API work, and full-stack product development opportunities.</p>
+            <div class="contact-links">
+                <a href="tel:+97333859939" class="contact-button">
+                    <i class="fas fa-phone"></i> Call Me: +973 33859939
+                </a>
+                <a href="mailto:alsaeedmalak8@gmail.com" class="contact-button">
+                    <i class="fas fa-envelope"></i> Email Me
+                </a>
+                <a href="https://www.linkedin.com/in/malak-alsaeed/" target="_blank" class="contact-button">
+                    <i class="fab fa-linkedin"></i> LinkedIn
+                </a>
+                <a href="#" class="contact-button" data-resume-link>
+                    <i class="fas fa-download"></i> Download Resume
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
+    </main>
+
+    <footer class="footer">
+        <div class="footer-container">
+            <p>&copy; 2026 Malak Alsaeed. Built with ASP.NET Core 10</p>
+        </div>
+    </footer>
+
+    <script src="/js/site.js"></script>
+</body>
+</html>
